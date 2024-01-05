@@ -5,7 +5,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbyBpDknBY1f9F4KL8ntuI69V29RbCEFGlYxQpgqZ-c-WLwJ-muJZMsKma7AR6kBrtY1/exec",
+      "https://script.google.com/macros/s/AKfycbxo5D8xPmTCD3hm6HCugV9tTY2GP83SItNXDzSoHxlfuO6kRQl-C_E2GoZUGn9DnXoEHA/exec",
       {
         method: "POST",
         body: new FormData(form),
@@ -21,7 +21,8 @@ form.addEventListener("submit", async (e) => {
       throw new Error(data.error);
     }
   } catch (error) {
-    console.error("Error! Something's wrong", error.message);
+    console.log(JSON.stringify(error));
+    console.error("Error! Something's wrong", JSON.stringify(error));
     alert("Registrasi Gagal!! Silahkan coba lagi.");
   }
 });
